@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Reecry</title>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(12, 12, 12);
+}
+
+.box{
+    text-align: center;
+}
+
+.hours, .minutes, .seconds, .amorpm{
+    width: 4em;
+    height: 4em;
+    background-color: rebeccapurple;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    /* box-shadow: 3px 3px 9px #542682, -3px -3px 9px #8048b8; */
+}
+
+#hours, #minutes, #seconds, #amorpm{
+    font-size: 2em;
+    color: white;
+}
+
+.box > h1{
+    font-size: 1em;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+
+    <div class="container">
+
+            <div class="box">
+                <div class="hours">
+                    <h1 id="hours">8</h1>
+                </div>
+                <h1>hours</h1>
+            </div>
+
+
+            <div class="box">
+                <div class="minutes">
+                    <h1 id="minutes">8</h1>
+                </div>
+                <h1>minutes</h1>
+            </div>
+
+
+            <div class="box">
+                <div class="seconds">
+                    <h1 id="seconds">8</h1>
+                </div>
+                <h1>seconds</h1>
+            </div>
+
+            <div class="box">
+                <div class="amorpm">
+                    <h1 id="amorpm">_ _</h1>
+                </div>
+                <h1>remaning time</h1>
+            </div>
+
+           
+
+    </div>
+
+    <script>
+
+let digitalClock = () => {
+
+    let date = new Date();
+
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    let amorpm = hours >= 12 ? 'pm' : 'am';
+
+    
+
+
+
+
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+//     document.getElementById("amorpm").innerHTML = amorpm;
+
+    setTimeout(digitalClock, 500);
+
+} 
+
+digitalClock();
+</script>
+
+
+</body>
+</html>
